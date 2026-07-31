@@ -134,10 +134,12 @@ const PortfolioPage: React.FC = () => {
               <div>
                 <h4 className="text-sm font-bold text-[var(--brand)] uppercase tracking-widest mb-3">Media Sosial</h4>
                 <div className="flex flex-wrap gap-3">
+                  {/* LinkedIn hidden
                   <a href="https://www.linkedin.com/in/daffa-rachel-putra-310180312/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--brand)] hover:border-[var(--brand)]/50 transition-all shadow-sm hover:shadow-md hover:-translate-y-1">
                     <FaLinkedin size={18} />
                     <span className="text-sm font-medium">LinkedIn</span>
                   </a>
+                  */}
                   <a href="https://github.com/daffarch" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--brand)] hover:border-[var(--brand)]/50 transition-all shadow-sm hover:shadow-md hover:-translate-y-1">
                     <FaGithub size={18} />
                     <span className="text-sm font-medium">GitHub</span>
