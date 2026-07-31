@@ -9,7 +9,7 @@ export const About: React.FC = () => {
   const personal = PORTFOLIO_INFO.personal;
   const name = personal.name ?? "Your Name";
   const avatar = personal.avatar;
-  const resumeHref = PORTFOLIO_INFO.meta.pdf || `${import.meta.env.BASE_URL}CV- Daffa Rachel P.pdf`;
+  const resumeHref = PORTFOLIO_INFO.meta?.pdf || `${import.meta.env.BASE_URL}CV- Daffa Rachel P.pdf`;
 
   const features = useMemo(() => PORTFOLIO_INFO.highlights ?? [], []);
   const heroSummary =
@@ -52,10 +52,10 @@ export const About: React.FC = () => {
   const carouselItems =
     avatarItems.length > 0
       ? avatarItems.map((it, idx) => ({
-          id: idx,
-          image: it.url || "/placeholder-1.jpg",
-          label: it.label ?? `Image ${idx + 1}`,
-        }))
+        id: idx,
+        image: it.url || "/placeholder-1.jpg",
+        label: it.label ?? `Image ${idx + 1}`,
+      }))
       : [{ id: 1, image: "/placeholder-1.jpg", label: "Profile" }];
 
   const springScrollTo = (y: number) => {
@@ -120,49 +120,49 @@ export const About: React.FC = () => {
         >
           {/* Left: Headline + features + CTAs */}
           <motion.div variants={item} className="md:col-span-7">
-              <div className="relative z-10">
-                <h1 className="text-4xl md:text-6xl font-extrabold leading-tight flex items-center gap-3">
-                  {name}
-                </h1>
+            <div className="relative z-10">
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight flex items-center gap-3">
+                {name}
+              </h1>
 
-                {personal.title && (
-                  <div className="mt-2 text-sm text-muted-foreground">
-                    {personal.title}
-                  </div>
-                )}
+              {personal.title && (
+                <div className="mt-2 text-sm text-muted-foreground">
+                  {personal.title}
+                </div>
+              )}
 
-                <motion.p
-                  variants={item}
-                  className="mt-6 text-lg text-muted-foreground max-w-2xl"
-                >
-                  {heroSummary}
-                </motion.p>
+              <motion.p
+                variants={item}
+                className="mt-6 text-lg text-muted-foreground max-w-2xl"
+              >
+                {heroSummary}
+              </motion.p>
 
-                <motion.ul
-                  variants={item}
-                  className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3"
-                >
-                  {features.map((f) => (
-                    <li key={f} className="flex items-start gap-3">
-                      <svg
-                        className="mt-1 w-5 h-5 text-foreground/80"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        aria-hidden
-                      >
-                        <path
-                          d="M5 12l4 4L19 6"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <span className="text-sm">{f}</span>
-                    </li>
-                  ))}
-                </motion.ul>
-              </div>
+              <motion.ul
+                variants={item}
+                className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3"
+              >
+                {features.map((f) => (
+                  <li key={f} className="flex items-start gap-3">
+                    <svg
+                      className="mt-1 w-5 h-5 text-foreground/80"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden
+                    >
+                      <path
+                        d="M5 12l4 4L19 6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-sm">{f}</span>
+                  </li>
+                ))}
+              </motion.ul>
+            </div>
           </motion.div>
 
           {/* Right: Redesigned Profile Photo Stack & CTAs */}
@@ -174,7 +174,7 @@ export const About: React.FC = () => {
             <div className="relative group w-72 h-96">
               {/* Animated Glow */}
               <div className="absolute -inset-1 bg-gradient-to-tr from-sky-400 to-indigo-600 rounded-[2rem] blur-xl opacity-40 group-hover:opacity-70 transition duration-500 animate-pulse" />
-              
+
               <div className="relative w-full h-full bg-background/50 backdrop-blur-xl rounded-[2rem] p-3 shadow-2xl border border-white/10">
                 {/* Images Stack */}
                 <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
@@ -183,9 +183,8 @@ export const About: React.FC = () => {
                     return (
                       <motion.div
                         key={item.id}
-                        className={`absolute inset-0 transition-all duration-700 ${
-                          isFirst ? (activeIndex === 0 ? "opacity-100 z-20 scale-100" : "opacity-0 z-10 scale-95") : (activeIndex !== 0 ? "opacity-100 z-20 scale-100" : "opacity-0 z-10 scale-95")
-                        }`}
+                        className={`absolute inset-0 transition-all duration-700 ${isFirst ? (activeIndex === 0 ? "opacity-100 z-20 scale-100" : "opacity-0 z-10 scale-95") : (activeIndex !== 0 ? "opacity-100 z-20 scale-100" : "opacity-0 z-10 scale-95")
+                          }`}
                       >
                         {item.image && !item.image.includes("/placeholder") ? (
                           <img
@@ -203,7 +202,7 @@ export const About: React.FC = () => {
                       </motion.div>
                     );
                   })}
-                  
+
                   {/* Image toggle button if multiple images */}
                   {carouselItems.length > 1 && (
                     <button
