@@ -30,11 +30,11 @@ export const PORTFOLIO_INFO: Portfolio = {
       location: "Pasuruan, Jawa timur Indonesia",
       website: "https://daffarch.github.io/portofolio",
       socials: [
-        {
-          label: "LinkedIn",
-          url: "https://www.linkedin.com/in/daffa-rachel-putra-310180312/",
-          icon: "SiLinkedin",
-        },
+        // {
+        //   label: "LinkedIn",
+        //   url: "https://www.linkedin.com/in/daffa-rachel-putra-310180312/",
+        //   icon: "SiLinkedin",
+        // },
         {
           label: "GitHub",
           url: "https://github.com/daffarch",
