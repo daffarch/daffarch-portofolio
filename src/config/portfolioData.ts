@@ -5,7 +5,7 @@ export const PORTFOLIO_INFO: Portfolio = {
     createdAt: new Date().toISOString(),
     locale: "en-US",
     url: "https://daffarch.github.io/portofolio", // update if you have a custom domain
-    pdf: "",
+    pdf: "/CV- Daffa Rachel P.pdf",
   },
   personal: {
     name: "Daffa Rachel Putra",

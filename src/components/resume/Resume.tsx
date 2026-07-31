@@ -379,9 +379,9 @@ export const Resume: React.FC<{ className?: string }> = ({
           </div>
           <div className="flex items-center gap-3">
             <a
-              href={meta.pdf ?? "/resume.pdf"}
+              href={meta.pdf || "/CV- Daffa Rachel P.pdf"}
               className="inline-flex items-center gap-2 text-sm underline"
-              download
+              download="CV- Daffa Rachel P.pdf"
             >
               <FaFileDownload className="w-4 h-4" /> Download PDF
             </a>

@@ -9,7 +9,7 @@ export const About: React.FC = () => {
   const personal = PORTFOLIO_INFO.personal;
   const name = personal.name ?? "Your Name";
   const avatar = personal.avatar;
-  const resumeHref = `${import.meta.env.BASE_URL}resume.pdf`;
+  const resumeHref = PORTFOLIO_INFO.meta.pdf || `${import.meta.env.BASE_URL}CV- Daffa Rachel P.pdf`;
 
   const features = useMemo(() => PORTFOLIO_INFO.highlights ?? [], []);
   const heroSummary =
@@ -236,6 +236,7 @@ export const About: React.FC = () => {
 
               <a
                 href={resumeHref}
+                download="CV- Daffa Rachel P.pdf"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-background/50 backdrop-blur-md px-7 py-3.5 text-sm font-semibold text-foreground hover:bg-muted hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md"
                 onKeyDown={(e) => handleKeyActivation(e, resumeHref)}
               >
